@@ -1,6 +1,10 @@
 spring:
   application:
     name: view-service
+  kafka:
+    consumer:
+      auto-offset-reset: earliest
+      group-id: 234234
 server:
   port: 8093
 eureka:
@@ -9,3 +13,9 @@ eureka:
       defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
   instance:
     preferIpAddress: true
+
+kafka:
+    bootstrap-servers: localhost:9092
+    topic:
+      userCreated: USER_CREATED_TOPIC
+      userUpdated: USER_UPDATED_TOPIC
